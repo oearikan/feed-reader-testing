@@ -26,11 +26,6 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
         // My solution---------------------:
         it('have non-empty URLs', function() {
             allFeeds.forEach(function(feed) {
@@ -39,11 +34,6 @@ $(function() {
             })
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
          // My solution---------------------------:
          it('have non-empty names', function(){
            allFeeds.forEach(function(feed) {
@@ -53,26 +43,14 @@ $(function() {
          });
     });
 
-
-    /* TODO: Write a new test suite named "The menu" */
     //My solution starts here. Respected the suite, spec indentation hierarchy------:
     describe('The Menu', function() {
 
-      /* TODO: Write a test that ensures the menu element is
-       * hidden by default. You'll have to analyze the HTML and
-       * the CSS to determine how we're performing the
-       * hiding/showing of the menu element.
-       */
        //My solution----------------------------------:
        it('icon is hidden by default', function(){
-            expect(document.body.className).toBe("menu-hidden");
+            expect($('body').hasClass('menu-hidden')).toBe(true);
        });
 
-       /* TODO: Write a test that ensures the menu changes
-        * visibility when the menu icon is clicked. This test
-        * should have two expectations: does the menu display when
-        * clicked and does it hide when clicked again.
-        */
         //My solution------------------------------------:I simply trigger two consecutive 'click' events on the hamburger icon and see if the body class toggles accordingly. This test assumes that the inital state of the menu is 'hidden'!!!
         it('changes visibility on click', function(){
             $('.icon-list').trigger('click');
@@ -85,16 +63,9 @@ $(function() {
 
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
     //My solution starts here. Respected the suite, spec indentation hierarchy------:
     describe('Initial Entries', function(){
 
-      /* TODO: Write a test that ensures when the loadFeed
-       * function is called and completes its work, there is at least
-       * a single .entry element within the .feed container.
-       * Remember, loadFeed() is asynchronous so this test will require
-       * the use of Jasmine's beforeEach and asynchronous done() function.
-       */
        //My Solution--------------------------------:
        var x = Math.floor(Math.random()*4); //Run the loadFeed with any of 1 of the 4 different sources...
        beforeEach(function(done){
@@ -107,8 +78,6 @@ $(function() {
        });
     });
 
-
-    /* TODO: Write a new test suite named "New Feed Selection" */
     //My solution starts here. Respected the suite, spec indentation hierarchy------:
     describe('New Feed Selection', function(){
 
